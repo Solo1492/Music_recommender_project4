@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Song Recommender</h1>
+        <form action="/" method="POST">
+            <label for="song_name">Enter a song name:</label>
+            <input type="text" name="song_name" id="song_name" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if message %}
+        <h2>{{ message }}</h2>
+        {% endif %}
+
+        {% if recommendations %}
+        <h2>Recommended Songs:</h2>
+        <div class="recommendations">
+            {% for song, artist in recommendations %}
+            <div class="recommendation">
+                <p><strong>Song Name:</strong> {{ song }}</p>
+                <p><strong>Artist:</strong> {{ artist }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
