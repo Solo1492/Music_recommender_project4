@@ -1,0 +1,7 @@
+Experiment,Features,n_neighbors,Distance Metric,Test Score,R-squared
+,,,,,
+1,All,5,minkowski,0.999703951,0.999703951
+,,,,,
+2,Tempo,5,minkowski,-0.252072424,-0.252072424
+,,,,,
+3,Subset,10,manhattan,-0.097665592,-0.097665592
